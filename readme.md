@@ -4,7 +4,7 @@
 
 ## how to use:
 run this command to clone  
-`wget -O - https://raw.githubusercontent.com/godamri/test-framework/main/install_script.sh | bash -s myTest`  
+`wget -O - https://raw.githubusercontent.com/godamri/test-framework/main/setup.sh | bash -s myTest`  
 change `mytest` directory name as needed
 
 Start testing mobile app:  
