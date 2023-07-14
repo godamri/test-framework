@@ -1,0 +1,26 @@
+{
+  "name": "test-framework",
+  "version": "0.0.1",
+  "description": "Test Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js",
+    "report": "node index.js",
+    "test:tag": "npx cucumber-js -f json:test/report/report.json --tags ",
+    "type:mobile": "rm -rf ./features && cp -r ./samples/mobile/features ./features && cp ./config/appium_options.sample.js ./config/driver_options.js",
+    "type:browser": "rm -rf ./features && cp -r ./samples/browser/features ./features && cp ./config/browser_options.sample.js ./config/driver_options.js",
+    "dev:sync-mobile": "yes | cp -fr ./features/* ./samples/mobile/features",
+    "dev:sync-browser": "yes | cp -fr ./features/* ./samples/browser/features"
+  },
+  "author": "Rian",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.2.0",
+    "assert": "^2.0.0",
+    "chai": "^4.3.7",
+    "webdriverio": "^8.12.1"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.1.1"
+  }
+}
