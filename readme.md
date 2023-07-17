@@ -16,7 +16,7 @@ Start testing web app:
 then configure driver setting in `config` directory.
 
 Running test :  
-`npm run test`
+`npm run test`  
 Running tagged tests:  
 `npm run test:tag @Login @userProfile`
 
