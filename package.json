@@ -4,7 +4,7 @@
   "description": "Test Framework",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js",
+    "test": "npx cucumber-js -f json:test/report/report.json",
     "report": "node index.js",
     "test:tag": "npx cucumber-js -f json:test/report/report.json --tags ",
     "type:mobile": "rm -rf ./features && cp -r ./samples/mobile/features ./features && cp ./config/appium_options.sample.js ./config/driver_options.js",
