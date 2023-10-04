@@ -13,6 +13,9 @@ Start testing mobile app:
 Start testing web app:  
 `npm run type:browser`
 
+Start testing API:  
+`npm run type:api`
+
 then configure driver setting in `config` directory.
 
 Running test :  
