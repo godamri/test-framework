@@ -9,18 +9,23 @@
     "test:tag": "npx cucumber-js -f json:test/report/report.json --tags ",
     "type:mobile": "rm -rf ./features && cp -r ./samples/mobile/features ./features && cp ./config/appium_options.sample.js ./config/driver_options.js",
     "type:browser": "rm -rf ./features && cp -r ./samples/browser/features ./features && cp ./config/browser_options.sample.js ./config/driver_options.js",
+    "type:api": "rm -rf ./features && cp -r ./samples/api/features ./features && cp ./config/api_options.sample.js ./config/driver_options.js",
     "dev:sync-mobile": "yes | cp -fr ./features/* ./samples/mobile/features",
-    "dev:sync-browser": "yes | cp -fr ./features/* ./samples/browser/features"
+    "dev:sync-browser": "yes | cp -fr ./features/* ./samples/browser/features",
+    "dev:sync-api": "yes | cp -fr ./features/* ./samples/api/features"
   },
   "author": "Rian",
   "license": "ISC",
   "dependencies": {
     "@cucumber/cucumber": "^9.2.0",
     "assert": "^2.0.0",
-    "chai": "^4.3.7",
+    "chai": "^4.3.10",
+    "chai-json-schema": "^1.5.1",
+    "pactum": "^3.5.1",
     "webdriverio": "^8.12.1"
   },
   "devDependencies": {
-    "cucumber-html-reporter": "^7.1.1"
+    "cucumber-html-reporter": "^7.1.1",
+    "wdio-cucumberjs-json-reporter": "^5.1.7"
   }
 }
