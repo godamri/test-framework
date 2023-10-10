@@ -1,18 +1,15 @@
 const { After, AfterAll } = require('@cucumber/cucumber');
-const { capture } = require('../../support/support.js');
+const { captureReq, customWorld } = require('../../support/support.js');
 
 let world;
 After(async function (scenario) {
-    // world = this;
-    // if (scenario.result.status != 'PASSED') {
-    //     await capture(world);
-    // }
+    world = this;
+    if (
+      "undefined" != typeof customWorld &&
+      "undefined" != typeof customWorld.state &&
+      "undefined" != typeof customWorld.state.cApiOps
+    ) {
+      captureReq(this, customWorld.state.cApiOps);
+    }
 })
-AfterAll(async function () {
-    // console.log('AfterAll: Disconnecting device ...');
-    // if ('undefined' !== typeof world && 'undefined' !== typeof world.driver) {
-    //     await world.driver.pause(3500)
-    //     await world.driver.deleteSession();
-    //     console.log('AfterAll: Device Disconnected ...');
-    // }
-})
+AfterAll(async function () {})
