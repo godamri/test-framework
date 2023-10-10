@@ -6,10 +6,9 @@ module.exports = {
         "capabilities": {
             "platformName": "Android",
             "appium:automationName": "UiAutomator2",
-            "appium:app": "/Users/me/Desktop/merchant.apk",
+            "appium:app": "/Users/grwqa/Desktop/TMDB.apk",
             "appium:deviceName": "Android",
-            "appium:appPackage": "com.google.analytics",
-            "appium:appActivity": ".MainActivity",
+            "appium:appPackage": "cu.wilb3r.codechallengetm",
             "appium:fullReset": true,
             "appium:disableIdLocatorAutocompletion": true
         }
