@@ -20,26 +20,26 @@ BeforeAll(async function () {
         }
     };
     await driver.pause(5000);
-    try {
-        const onboardingQRIS = await driver.$('//*[@text="Terima pembayaran QRIS"]');
-        await onboardingQRIS.waitForExist({ timeout: 2000, reverse: true });
-        await onboardingQRIS.touchAction([
-            { action: "longPress", x: screen.x.right, y: screen.y.right },
-            { action: "moveTo", x: screen.x.left, y: screen.y.left },
-            "release"
-        ]);
-        console.log('Swipe Left Terima pembayaran QRIS Element...');
-    } catch (error) {
-        console.log('Terima pembayaran QRIS Element not found');
-    }
-    try {
-        const onboardingNext = await driver.$('id=btnNext');
-        await onboardingNext.waitForDisplayed({ timeout: 5000 });
-        await onboardingNext.click();
-        console.log('Click Onboarding Next Button... End');
-    } catch (error) {
-        console.log('Onboarding Next Button Element not found');
-    }
+    // try {
+    //     const onboardingQRIS = await driver.$('//*[@text="Terima pembayaran QRIS"]');
+    //     await onboardingQRIS.waitForExist({ timeout: 2000, reverse: true });
+    //     await onboardingQRIS.touchAction([
+    //         { action: "longPress", x: screen.x.right, y: screen.y.right },
+    //         { action: "moveTo", x: screen.x.left, y: screen.y.left },
+    //         "release"
+    //     ]);
+    //     console.log('Swipe Left Terima pembayaran QRIS Element...');
+    // } catch (error) {
+    //     console.log('Terima pembayaran QRIS Element not found');
+    // }
+    // try {
+    //     const onboardingNext = await driver.$('id=btnNext');
+    //     await onboardingNext.waitForDisplayed({ timeout: 5000 });
+    //     await onboardingNext.click();
+    //     console.log('Click Onboarding Next Button... End');
+    // } catch (error) {
+    //     console.log('Onboarding Next Button Element not found');
+    // }
 });
 Before(async function () {
     this.driver = driver;
@@ -47,22 +47,22 @@ Before(async function () {
 });
 
 Before({ tags: "@Login" }, async function () {
-    try {
-        // clearing login form
-        console.log('');
-        console.log('Preparing login screen...');
-        const loginScreenInputEmail = await this.driver.$("id=inputEmail");
-        const e = await loginScreenInputEmail.waitForDisplayed({ timeout: 3000 });
-        const loginScreenInputPassword = await this.driver.$("id=inputPassword");
-        const p = await loginScreenInputPassword.waitForDisplayed({ timeout: 3000 });
-        if (e) {
-            await loginScreenInputEmail.setValue('');
-        }
-        if (p) {
-            await loginScreenInputPassword.setValue('');
-        }
-        console.log('Login screen ready');
-    } catch (error) {
-        console.log('Login screen not ready!');
-    }
+    // try {
+    //     // clearing login form
+    //     console.log('');
+    //     console.log('Preparing login screen...');
+    //     const loginScreenInputEmail = await this.driver.$("id=inputEmail");
+    //     const e = await loginScreenInputEmail.waitForDisplayed({ timeout: 3000 });
+    //     const loginScreenInputPassword = await this.driver.$("id=inputPassword");
+    //     const p = await loginScreenInputPassword.waitForDisplayed({ timeout: 3000 });
+    //     if (e) {
+    //         await loginScreenInputEmail.setValue('');
+    //     }
+    //     if (p) {
+    //         await loginScreenInputPassword.setValue('');
+    //     }
+    //     console.log('Login screen ready');
+    // } catch (error) {
+    //     console.log('Login screen not ready!');
+    // }
 });
