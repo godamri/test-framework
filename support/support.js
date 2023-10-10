@@ -2,6 +2,7 @@ const { World } = require('@cucumber/cucumber');
 
 const world = class extends World {
     driver = null;
+    state = {};
     constructor(options) {
         super(options);
     }
@@ -13,13 +14,13 @@ const capture = async (world, timeout=200) => {
     });
 }
 
-const captureJson = async (world, toss, timeout=200) => {
+const captureReq = async (world, toss) => {
     const jsonHeaders = {
         'headers': toss._request['headers'],
         'payload': toss._request['body']
     };
     const jsonResponse = toss._response['json'];
-    world.attach(toss._request.url, 'text/plain');
+    world.attach(toss._request.method + ' ' + toss._request.url, 'text/plain');
     world.attach(
         JSON.stringify(jsonHeaders, null, 2),
         'application/json'
@@ -34,5 +35,5 @@ const captureJson = async (world, toss, timeout=200) => {
 module.exports = {
     customWorld: world,
     capture,
-    captureJson
+    captureReq
 };
