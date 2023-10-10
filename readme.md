@@ -20,8 +20,9 @@ then configure driver setting in `config` directory.
 
 Running test :  
 `npm run test`  
+`npm run test:ordered or npm run test:o`  
 Running tagged tests:  
 `npm run test:tag @Login @userProfile`
 
 Viewing test report :  
-`npm run report`
+`npm run report or npm run r`
