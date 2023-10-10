@@ -2,14 +2,13 @@ const { Given, When } = require('@cucumber/cucumber');
 const chai = require('chai');
 const chaiJsonSchema = require('chai-json-schema');
 const { spec, response } = require("pactum");
-const { captureJson } = require('../../support/support');
-const {driverOptions, url} = require("../../config/driver_options.js");
+const {url} = require("../../config/driver_options.js");
 
 chai.use(chaiJsonSchema);
 const expect = chai.expect;
 
 Given('Agent List All Movie', async function () {
-    const listUrl = url + '/api/movies';
+    const listUrl = customWorld.state.api.base_url + '/api/movies';
     const jsonSchema = {
         type: 'object',
         properties: {
@@ -30,7 +29,8 @@ Given('Agent List All Movie', async function () {
     }).withBody({
         'a': 'a'
     });
-    await list.expectStatus(200).toss();
-    captureJson(this, list);
+    await list.toss();
+    customWorld.state.api.current_req = list;
+    list.expectStatus(200);
     expect(list._response['json']).to.be.jsonSchema(jsonArraySchema);
 });
