@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cucumber-js -f json:test/report/report.json",
+    "test:ordered": "npx cucumber-js @order-execution.txt -f json:test/report/report.json",
+    "test:o": "npx cucumber-js @order-execution.txt -f json:test/report/report.json",
     "report": "node index.js",
+    "r": "node index.js",
     "test:tag": "npx cucumber-js -f json:test/report/report.json --tags ",
     "type:mobile": "rm -rf ./features && cp -r ./samples/mobile/features ./features && cp ./config/appium_options.sample.js ./config/driver_options.js",
     "type:browser": "rm -rf ./features && cp -r ./samples/browser/features ./features && cp ./config/browser_options.sample.js ./config/driver_options.js",
