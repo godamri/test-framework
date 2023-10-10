@@ -3,6 +3,7 @@ const chai = require('chai');
 const chaiJsonSchema = require('chai-json-schema');
 const { spec, response } = require("pactum");
 const {url} = require("../../config/driver_options.js");
+const { customWorld } = require("../../support/support");
 
 chai.use(chaiJsonSchema);
 const expect = chai.expect;
