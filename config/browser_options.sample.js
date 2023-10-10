@@ -6,7 +6,7 @@ module.exports = {
             args: process.env.CI ? ['headless', 'disable-gpu'] : []
         }
     }},
-    url : 'https://google.io',
+    url : 'https://google.com',
     metaData: {
         "App Version": "0.28.1",
         "Test Environment": "DEVEL",
