@@ -7,9 +7,10 @@ After(async function (scenario) {
     if (
       "undefined" != typeof customWorld &&
       "undefined" != typeof customWorld.state &&
-      "undefined" != typeof customWorld.state.cApiOps
+      "undefined" != typeof customWorld.state.api &&
+      "undefined" != typeof customWorld.state.api.current_req
     ) {
-      captureReq(this, customWorld.state.cApiOps);
+      captureReq(this, customWorld.state.api.current_req);
     }
 })
 AfterAll(async function () {})
