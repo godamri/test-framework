@@ -5,5 +5,5 @@ Feature: Google Ubuntu LTS
     @RegressionTest @Login
     Scenario: Search ubuntu LTS
         Given User arrives in google search homepage
-        When User search word "Ubuntu LTS"
+        When User search word Ubuntu LTS
         Then User click search button
